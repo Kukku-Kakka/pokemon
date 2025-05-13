@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="js.js" defer></script>
+</head>
+<body>
+    <header>
+        <h3 class="logo">Pokedex</h3>
+        <h3>=</h3>
+    </header>
+    <div class="main">
+        <div class="mainHeader">
+            <img src="assets/International_Pokémon_logo.svg.png" alt="">
+        </div>
+
+        <div class="mainBody">
+            <div class="bodyHeader">
+                <input type="text" id="filterByName" placeholder="Search Pokemon" onkeyup="filterPokemon()">
+                <select name="filterByType" id="filterByType" onchange="filterPokemon()">
+                    <option value="">Filter by Type</option>
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="grass">Grass</option>
+                    <option value="electric">Electric</option>
+                    <option value="ice">Ice</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="flying">Flying</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="bug">Bug</option>
+                    <option value="rock">Rock</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="steel">Steel</option>
+                    <option value="fairy">Fairy</option>
+                </select>
+            </div>
+
+            <div class="mainGrid">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <h3 onclick="firstPage()">1</h3>
+            <h3 id="prevPage" onclick="prevPage()">&lsaquo;</h3>
+            <h3 id="pageNumber">1</h3>
+            <h3 id="nextPage" onclick="nextPage()">&rsaquo;</h3>
+            <h3 onclick="lastPage()">5</h3>
+        </div>
+    </div>
+
+    <footer>
+        <h3>All Rights Reserved</h3>
+        <h3>Pokedex</h3>
+    </footer>
+
+    <div class="popup-container" id="popup">
+        <i class='bx bx-x' id="close-btn"></i>
+        <div class="pokemon-details">
+            <div class="left-side">
+            
+                <h2 id="pokemonId"></h2>
+
+                <div class="pokemon-type" id="pokemon-type">
+                    <!-- bro this is dynamic now incase the type increase in the poke api -->
+                </div>
+
+                <div class="stats" id="pokemon-stats">
+                    <p id="hp"></p>
+                    <p id="atk"></p>
+                    <p id="def"></p>
+                    <p id="speed"></p>
+                    <p id="special-attack"></p>
+                    <p id="special-defense"></p>
+                </div>
+
+                <div class="region">
+                    <p id="region"></p>
+                </div>
+
+                <div class="description">
+                    <p id="description"></p>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <h1 id="pokemon_name"></h1>
+                <div class="pokemon-image">
+                </div>
+            </div>
+       </div>
+    </div>
+</body>
+</html>
